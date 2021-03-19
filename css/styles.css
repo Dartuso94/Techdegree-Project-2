@@ -1,0 +1,207 @@
+/* ----- || General Layout ----- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Source Serif Pro', serif;
+}
+
+.name {
+    text-align: center;
+    margin: 0 0 5px 0;
+    padding-top: 10px;
+}
+.main-nav {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-variant: small-caps;
+    text-align: center;
+    padding: 10px;
+}
+.main-nav li {
+    padding: 5px;    
+}
+#title {
+    padding-bottom: 15px;
+}
+img {
+    min-width: 300px;
+    min-height: 175px;
+    width: 300px;
+    height: 175px;
+}
+
+.intro, .examples, #title, #contact {
+    text-align: center;
+}
+.intro {
+    padding-top: 20px;
+}
+.intro p {
+    font-size: 1.35rem;
+    margin: 16px 10px;
+    padding: 0 25px;
+}
+p {
+    font-size: 1.2rem;
+}
+#skills h2, #skills p {
+    text-align: center;
+    padding: 10px 5px;
+}
+#contact h2, #contact p {
+    padding: 10px 5px;
+}
+.footer, .skill-list {
+    list-style-type: none;
+}
+.bot-nav {
+    display: none;
+}
+
+/* ----- || Flexbox ----- */
+
+.main-nav, .portfolio, .skill-list, .footer {
+    display: flex;
+}
+
+.main-nav {
+    flex-direction: column;
+    margin: auto;
+}
+.portfolio {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.examples {
+    margin: 10px auto;
+}
+.examples p {
+    margin: 16px 10px;
+}
+.skill-list {
+    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.skill-list li {
+    width: calc(98px);
+    padding: 10px 12px;
+    margin: 0 auto;
+}
+#contact {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.footer {
+    justify-content: flex-end;
+    padding: 13px 15px;
+}
+.footer :first-child {
+    margin-right: auto;
+}
+
+/* ----- || Links ----- */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a::after {
+    color: black;
+}
+
+
+/* ----- || Decorations ----- */
+
+header, footer {
+    background-color: rgba(245, 245, 245, .5);
+}
+html {
+    background-color: #E8D9E7;
+}
+.examples img {
+    box-shadow: 2px 2px 5px gray;
+}
+.examples img:hover, .skill-list li:hover {
+    transform: rotate(.5deg);
+    box-shadow: 4px 4px 5px #F0A6CA;
+    color: #ffe9f4;
+}
+.skill-list li {
+    text-align: center;
+    color: honeydew;
+    background-color: #8C5489;
+    border: 2px solid #8C5489;
+    border-radius: 25%;
+    box-shadow: 2px 2px 5px gray;
+}
+
+/* ----- || Media Queries ----- */
+
+@media (min-width: 768px) {
+    .main-nav {
+        flex-flow: row;
+        justify-content: center;
+    }
+    .intro {
+        display: flex;
+        margin: 5%
+    }
+    .intro img {
+        order: 1;
+    }
+    .portfolio {
+        clear:unset;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .examples {
+        width: 50%;
+        margin: 10px auto;
+        justify-self: center;
+    }
+    .skill-list{
+        flex-flow: row;
+    }
+    .phone-nav {
+        display: none;
+    }
+    .bot-nav {
+        display: block;
+        padding: 0 5px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .name {
+        text-align: left;
+        margin-right: auto;
+        padding: 10px;
+        padding-left: 25px;
+    }
+    .main-nav {
+        flex-direction: row;
+        padding: 12px 10px;
+        margin: 12px;
+    }
+
+    .examples {
+        width: 30%;
+    }
+    .portfolio {
+        justify-content: space-between;
+    }
+}
